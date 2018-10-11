@@ -46,13 +46,13 @@ public:
 	vector<int> twoSum(vector<int>& nums, int target) {
 		unordered_map<int, int> nums_count;
 		nums_count.reserve(nums.size());
-		for (size_t i = 0; i < nums.size(); i++)
+		for (int i = 0; i < nums.size(); i++)
 		{
 			int num = nums[i];
 			auto itr = nums_count.find(num);
 			if (itr != nums_count.end())
 			{
-				return { itr->second - 1, i};
+				return { itr->second - 1,i };
 			}
 			nums_count.insert(std::make_pair(target - num, i + 1));
 		}
